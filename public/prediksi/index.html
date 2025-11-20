@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Prakiraan Cuaca Kabupaten Jombang - BMKG</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🌤️</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hero Header Section -->
+    <div class="main-header">
+        <div class="header-bg-pattern"></div>
+        <div class="header-container">
+            <h1 class="main-title">Sistem Prakiraan Cuaca Kabupaten Jombang</h1>
+            <h2 class="university">Universitas Brawijaya</h2>
+            <p class="tagline">Dari Kampus untuk Negeri: Menyajikan Prakiraan Cuaca Berbasis Data BMKG</p>
+        </div>
+    </div>
+
+    <div class="container" id="dashboard">
+        <div class="control-panel">
+            <div class="location-selector-panel">
+                <label for="areaCode">🌍 Pilih Wilayah:</label>
+                <select id="areaCode">
+                <option value="">-- Pilih Kelurahan/Desa di Kabupaten Jombang --</option>
+                <optgroup label="Kec. Jombang">
+                    <option value="35.17.09.1002">Jombatan</option>
+                    <option value="35.17.09.1004">Kaliwungu</option>
+                    <option value="35.17.09.1005">Jelakombo</option>
+                    <option value="35.17.09.2001">Mojongapit</option>
+                    <option value="35.17.09.2003">Plandi</option>
+                </optgroup>
+                <optgroup label="Kec. Mojoagung">
+                    <option value="35.17.06.2001">Kedunglumpang</option>
+                    <option value="35.17.06.2002">Dukuhmojo</option>
+                    <option value="35.17.06.2003">Karangwinongan</option>
+                    <option value="35.17.06.2004">Kademangan</option>
+                    <option value="35.17.06.2005">Janti</option>
+                </optgroup>
+                <optgroup label="Kec. Peterongan">
+                    <option value="35.17.10.2001">Peterongan</option>
+                    <option value="35.17.10.2002">Keplaksari</option>
+                    <option value="35.17.10.2003">Kepuhkembeng</option>
+                </optgroup>
+                <optgroup label="Kec. Diwek">
+                    <option value="35.17.08.2001">Kayangan</option>
+                    <option value="35.17.08.2002">Puton</option>
+                    <option value="35.17.08.2003">Bendet</option>
+                </optgroup>
+                <optgroup label="Kec. Gudo">
+                    <option value="35.17.02.2001">Pucangro</option>
+                    <option value="35.17.02.2002">Kedungturi</option>
+                    <option value="35.17.02.2003">Japanan</option>
+                </optgroup>
+                <optgroup label="Kec. Ngoro">
+                    <option value="35.17.03.2001">Jombok</option>
+                    <option value="35.17.03.2002">Genukwatu</option>
+                </optgroup>
+                <optgroup label="Kec. Perak">
+                    <option value="35.17.01.2001">Jantiganggong</option>
+                    <option value="35.17.01.2002">Kepuhkajang</option>
+                </optgroup>
+                <optgroup label="Kec. Bareng">
+                    <option value="35.17.04.2001">Kebondalem</option>
+                </optgroup>
+                <optgroup label="Kec. Wonosalam">
+                    <option value="35.17.05.2001">Galengdowo</option>
+                    <option value="35.17.05.2002">Wonomerto</option>
+                </optgroup>
+                <optgroup label="Kec. Mojowarno">
+                    <option value="35.17.07.2001">Kedungpari</option>
+                </optgroup>
+                <optgroup label="Kec. Sumobito">
+                    <option value="35.17.11.2001">Plosokerep</option>
+                    <option value="35.17.11.2002">Jogoloyo</option>
+                </optgroup>
+                <optgroup label="Kec. Kesamben">
+                    <option value="35.17.12.2001">Kedungbetik</option>
+                </optgroup>
+                <optgroup label="Kec. Tembelang">
+                    <option value="35.17.13.2001">Mojokrapak</option>
+                    <option value="35.17.13.2002">Pesantren</option>
+                </optgroup>
+                <optgroup label="Kec. Ploso">
+                    <option value="35.17.14.2001">Tanggungkramat</option>
+                    <option value="35.17.14.2002">Rejoagung</option>
+                </optgroup>
+                <optgroup label="Kec. Plandaan">
+                    <option value="35.17.15.2001">Klitih</option>
+                </optgroup>
+                <optgroup label="Kec. Kabuh">
+                    <option value="35.17.16.2001">Marmoyo</option>
+                    <option value="35.17.16.2002">Tanjungwadung</option>
+                </optgroup>
+                <optgroup label="Kec. Bandarkedungmulyo">
+                    <option value="35.17.18.2001">Bandarkedungmulyo</option>
+                </optgroup>
+                <optgroup label="Kec. Jogoroto">
+                    <option value="35.17.19.2001">Jogoroto</option>
+                </optgroup>
+                <optgroup label="Kec. Megaluh">
+                    <option value="35.17.20.2001">Turipinggir</option>
+                </optgroup>
+                <optgroup label="Kec. Ngusikan">
+                    <option value="35.17.21.2001">Ketapangkuning</option>
+                </optgroup>
+            </select>
+            <a href="/monitoring" class="monitoring-btn">
+                📊 Monitoring Real-Time
+            </a>
+        </div>
+            <div id="selectedInfo" class="selected-info"></div>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Memuat data cuaca...</p>
+        </div>
+
+        <div id="error" class="error" style="display: none;"></div>
+
+        <div id="locationInfo" class="location-info" style="display: none;">
+            <h2 id="locationName"></h2>
+            <div class="location-details">
+                <p><strong>Kecamatan:</strong> <span id="kecamatan"></span></p>
+                <p><strong>Kabupaten:</strong> <span id="kabupaten"></span></p>
+                <p><strong>Provinsi:</strong> <span id="provinsi"></span></p>
+                <p><strong>Koordinat:</strong> <span id="koordinat"></span></p>
+                <p><strong>Timezone:</strong> <span id="timezone"></span></p>
+            </div>
+        </div>
+
+        <div id="weatherDashboard" class="weather-dashboard" style="display: none;">
+            <div id="currentWeather" class="current-weather"></div>
+            <div id="forecast" class="forecast"></div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>© 2025 Sistem Prakiraan Cuaca Kabupaten Jombang - Universitas Brawijaya. All rights reserved.</p>
+                <p class="footer-tagline">Dari Kampus untuk Negeri: Dukungan Data untuk Masyarakat</p>
+                <p class="data-source">Sumber Data: <strong>BMKG (Badan Meteorologi, Klimatologi, dan Geofisika)</strong></p>
+                <p class="update-time">Terakhir diperbarui: <span id="updateTime"></span></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

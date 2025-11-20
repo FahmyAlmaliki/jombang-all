@@ -1,0 +1,24 @@
+{
+  "name": "jombang-weather-combined",
+  "version": "2.0.0",
+  "description": "Sistem Monitoring dan Prakiraan Cuaca Jombang - Gabungan Real-Time Monitoring dan Prediksi BMKG",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "weather",
+    "monitoring",
+    "dashboard",
+    "bmkg",
+    "jombang",
+    "cuaca",
+    "prediksi"
+  ],
+  "author": "Universitas Brawijaya",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
